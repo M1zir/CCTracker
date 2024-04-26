@@ -1,4 +1,4 @@
-import React, { SVGProps } from 'react';
+import { SVGProps } from 'react';
 import { ModeToggle } from "@/components/mode-toggle";
 
 import { Button } from "@/components/ui/button";

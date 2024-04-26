@@ -5,6 +5,7 @@ import { CryptoData, subscribeToCryptoData } from '../Api/cryptoApi';
 interface CryptoContextType {
   cryptoData: CryptoData[];
   currency: string;
+  coinData: unknown;
   setCurrency: React.Dispatch<React.SetStateAction<string>>;
   sortBy: string;
   setSortBy: React.Dispatch<React.SetStateAction<string>>;
@@ -69,6 +70,7 @@ export const CryptoProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   return (
     <CryptoContext.Provider value={{
       cryptoData,
+      coinData,
       getCoinData,
       getCoinHistory,
       loading,
