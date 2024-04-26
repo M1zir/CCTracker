@@ -6,14 +6,6 @@ interface CryptoContextType {
   cryptoData: CryptoData[];
   currency: string;
   coinData: unknown;
-  setCurrency: React.Dispatch<React.SetStateAction<string>>;
-  sortBy: string;
-  setSortBy: React.Dispatch<React.SetStateAction<string>>;
-  page: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
-  totalPages: number;
-  perPage: number;
-  setPerPage: React.Dispatch<React.SetStateAction<number>>;
   getCoinData: (coinId: string) => void;
   getCoinHistory: (coinId: string, days: number, vs_currency: string) => void;
   loading: boolean;
