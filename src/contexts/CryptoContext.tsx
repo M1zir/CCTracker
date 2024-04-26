@@ -4,7 +4,6 @@ import { CryptoData, subscribeToCryptoData } from '../Api/cryptoApi';
 
 interface CryptoContextType {
   cryptoData: CryptoData[];
-  currency: string;
   coinData: unknown;
   getCoinData: (coinId: string) => void;
   getCoinHistory: (coinId: string, days: number, vs_currency: string) => void;

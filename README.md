@@ -10,6 +10,7 @@ The CC Price Tracker is a web application designed to provide real-time cryptocu
 
 ## APIs Used
 1. **Binance WebSocket API**: Used for real-time price updates.
+3. **CoinGecko** free api for price history and trends
 2. **Custom API Endpoints** ([src/Api/cryptoApi.ts](file:///c%3A/Users/Abubakr/Documents/Price%20Tracker%20Task/Price-tracker/src/Api/cryptoApi.ts#1%2C1-1%2C1)): Handles data formatting and image retrieval for different cryptocurrencies.
 
 ## Styling
