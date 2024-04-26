@@ -16,7 +16,6 @@ export default function Component(): JSX.Element {
   const { cryptoData, loading } = useCrypto();
   const [isDialogOpen, setDialogOpen] = useState(false);
   const [selectedCoin, setSelectedCoin] = useState(null);
-  const [chartData, setChartData] = useState([]);
 
   
   const handleRowClick = (coin) => {
@@ -76,7 +75,7 @@ export default function Component(): JSX.Element {
                 Detailed view of {selectedCoin.name} for the past 30 days. See historical data and price changes.
               </DialogDescription>
             </DialogHeader>
-            <Details data={chartData} type="value" />
+            <Details />
             <DialogFooter>
               <Button onClick={() => setDialogOpen(false)}>Close</Button>
             </DialogFooter>

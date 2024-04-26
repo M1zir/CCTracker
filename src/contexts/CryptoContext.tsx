@@ -22,7 +22,7 @@ const CryptoContext = createContext<CryptoContextType | undefined>(undefined);
 
 export const CryptoProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [cryptoData, setCryptoData] = useState<CryptoData[]>([]);
-  const [coinData, setCoinData] = useState<any>(null);
+  const [coinData, setCoinData] = useState<unknown>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export const CryptoProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const getCoinData = async (coinId: string) => {
     try {
-      const detailedData = await fetchCoinData(coinId);
+      const detailedData = await setCoinData(coinId);
       setCoinData(detailedData);
     } catch (error) {
       console.error('Failed to fetch detailed coin data:', error);
@@ -57,8 +57,8 @@ export const CryptoProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
   const getCoinHistory = async (coinId: string, days: number = 30, vs_currency: string = 'usd') => {
     try {
-      const history = await fetchCoinHistory(coinId, days, vs_currency);
-      getCoinHistory(history);
+      const history = await getCoinHistory(coinId, days, vs_currency);
+      setCoinData(history);
     } catch (error) {
       console.error('Failed to fetch coin history:', error);
     }
@@ -70,11 +70,9 @@ export const CryptoProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     <CryptoContext.Provider value={{
       cryptoData,
       getCoinData,
-      coinData,
       getCoinHistory,
       loading,
     }}>
-
       {children}
     </CryptoContext.Provider>
   );

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ChartComponent, SeriesCollectionDirective, SeriesDirective, Inject, LineSeries, DateTime, Legend, Tooltip } from '@syncfusion/ej2-react-charts';
 
 const PriceHistory = () => {
-  const [chartData, setChartData] = useState([]);
+  const [chartData] = useState([]);
 
   return (
     <ChartComponent
